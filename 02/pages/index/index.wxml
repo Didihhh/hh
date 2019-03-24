@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class='viewInfo' >
+  <image class='images' src='../../images/picture.jpg'></image>
+  <view class='view1'>
+         <text class='v1'>{{name}}</text>
+         <input class='v2' type='text' placeholder='请输入账号' name='user' bindinput='username'/>  
+  </view>
+  <view class='view2'>
+    <text class='v3'>{{pword}}</text>
+    <input class='v4' type='password' placeholder='请输入密码' name='password' bindinput='userpwd'/>
+  </view>
+  <checkbox class='checkbox' bindchange='checkbox'>记住密码</checkbox>
+  <view class='view3'>
+  <view class='v5'>
+  <button class="button1" bindtap='login'>登录</button>
+  </view>
+  <view class='v6'>
+  <button class="button2" bindtap='regist'>点击注册</button>
+  </view>
+  </view>
+</view>

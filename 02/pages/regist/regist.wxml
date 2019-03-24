@@ -1,0 +1,33 @@
+
+
+<view class='viewInfo'>
+<image class='images' src='../../images/pic.jpg'></image>
+  <view class='view1'>
+         <text class='v1'>{{name}}</text>
+         <input class='v2' type='text' placeholder='请输入手机号或者邮箱' name='user' bindinput='username'/>
+  </view>
+  <view class='view2'>
+    <text class='v3'>{{pword}}</text>
+    <input class='v4' type='password' placeholder='请输入密码' name='password' bindinput='userpword'/>
+
+  </view>
+   <view class='view3'>
+    <text class='v5'>{{academy}}</text>
+    <input class='v6' type='text' placeholder='请输入学院号' name='academy' bindinput='useracademy'/>
+
+  </view>
+   <view class='view4'> <text class='v7'>{{sno}}</text>
+    <input class='v8' type='text' placeholder='请输入学生编号' name='sno' bindinput='usersno'/>
+
+  </view>
+  <!-- <view class='view3'>
+      <view class='v5'>
+         <text>{{repword}}</text>
+      </view>
+     <view class='v6'>
+        <input type='password' placeholder='请再次输入密码' name='repassword' bindinput='userrepword'/>
+      </view>
+  </view> -->
+  <button class="button" bindtap='regist'>注册</button>
+  
+</view>

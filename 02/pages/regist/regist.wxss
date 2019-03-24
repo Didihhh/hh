@@ -1,0 +1,82 @@
+/* pages/regist/regist.wxss */
+.images{
+  width:250px;
+  height:200px;
+  margin-left: 65px;
+  margin-bottom: 20px;
+}
+.view1{
+  display: flex; 
+  margin-top:20px;
+  margin-bottom: 5px;
+}
+.v1{
+  margin-left: 25px;
+}
+.v2{
+   border: 1px solid black;
+  margin-left: 15px;
+  /*margin-right: 15px; */
+  
+}
+.view2{
+  display: flex; 
+  margin-top:15px;
+  margin-bottom: 5px;
+}
+.v3{
+  margin-left: 30px;
+}
+.v4{
+   border: 1px solid black;
+   margin-left: 23px;
+  
+}
+
+.view3{
+  display: flex; 
+  margin-top:15px;
+  margin-bottom: 5px;
+}
+.v5{
+  margin-left: 20px;
+}
+.v6{
+   border: 1px solid black;
+   margin-left: 23px;
+  
+}
+.view4{
+  display: flex; 
+  margin-top:15px;
+  margin-bottom: 5px;
+}
+.v7{
+  margin-left: 15px;
+}
+.v8{
+   border: 1px solid black;
+   margin-left:10px;
+  
+}
+/*
+.view3{
+  display: flex; 
+  margin-top:15px;
+  margin-bottom: 25px;
+}
+.v5{
+  margin-left: 20px;
+}
+.v6{
+   border: 1px solid black;
+   margin-left:1px;
+  
+}
+*/
+.button{
+  width:70px;
+  height:50px;
+  margin-top:20px;
+  margin-left:145px;
+}

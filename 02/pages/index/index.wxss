@@ -1,0 +1,84 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+
+}
+.images{
+  width:250px;
+  height:200px;
+  margin-left: 65px;
+  margin-bottom: 20px;
+}
+
+.view1{
+  display: flex; 
+  margin-top:20px;
+  margin-bottom: 5px;
+}
+.v1{
+  margin-left: 20px;
+}
+.v2{
+   border: 1px solid black;
+   margin-left: 5px;
+ /* margin-right: 15px; */
+  
+}
+.view2{
+  display: flex; 
+  margin-top:15px;
+  margin-bottom: 5px;
+}
+.v3{
+  margin-left: 20px;
+}
+.v4{
+   border: 1px solid black;
+   margin-left: 15px;
+  /* margin-left: 60px;
+  margin-right: 15px; */
+  
+}
+.checkbox{
+  margin-left:15px;
+  margin-top: 10px;
+}
+
+.view3{
+  display: flex; 
+  margin-top:5px;
+  margin-bottom: 5px;
+}
+.v5{
+  
+   width:70px;
+  height:30px;
+  margin-left:60px;
+  margin-top:20px;
+}
+.v6{
+   width:140px;
+  height:30px;
+  margin-left:20px;
+  margin-top:20px;
+}
+ 
+.text{
+  border: 1px solid black;
+  margin-left: 60px;
+  margin-right: 15px;
+  /* margin-top: 0px; */
+}

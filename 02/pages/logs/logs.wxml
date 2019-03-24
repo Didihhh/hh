@@ -1,0 +1,7 @@
+<!--logs.wxml-->
+<view class="container">
+    <text class="log">{{sucess}}</text>
+  <view class='exit'>
+  <button class="button1" bindtap='exit'>退出登录</button>
+  </view>
+</view>

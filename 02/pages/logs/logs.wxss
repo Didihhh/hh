@@ -1,0 +1,9 @@
+
+.log{
+  margin-left: 25px;
+  margin-top:80px;
+}
+.button1{
+  margin-left: 0px;
+  margin-top:20px;
+}
