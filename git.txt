@@ -1,0 +1,96 @@
+1.创建版本库
+选择一个合适的地方，创建一个空目录：
+$ mkdir learngit
+$ cd learngit
+$ pwd
+/Users/michael/learngit（仓库路径）
+2.通过git init命令把这个目录变成Git可以管理的仓库：
+$ git init
+Initialized empty Git repository in /Users/michael/learngit/.git/
+3.编写一个free.txt文件，放到learngit目录下
+4.用命令git add告诉Git，把文件添加到仓库：
+$ git add free.txt
+5.把文件提交到仓库之前要先说明名字和邮箱地址
+git config --global user.email "you@example.com"
+    git config --global user.name "Your Name"
+6.用命令git commit告诉Git，把文件提交到仓库：
+$ git commit -m "wrote a readme file"   //“ ”内内容随意（最好与增加的内容有关）
+7. git status命令可以让我们时刻掌握仓库当前的状态git log --graph命令可以看到分支合并图
+8. git diff 文件名：文件具体被修改的内容
+9. git log命令显示从最近到最远的提交日志（历史记录）
+   git log --pretty=oneline命令：简单化历史记录
+10.git reset –-hard ：版本回退
+11.cat 文件名：查看文件是否回退到想要的版本
+12. git reset –-hard commit_id：指定回到未来的某个版本（commit_id是版本号前几位）
+13. git reflog：记录你的每一次命令（命令的历史记录）【要重返未来可以用这个查看命令】
+14.git checkout -- 文件名：丢弃工作区的修改
+把xxx.txt文件在工作区的修改全部撤销，这里有两种情况：
+一种是xxx.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+一种是xxx.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态
+15.git reset HEAD 文件名：可以把暂存区的修改撤销掉（unstage），重新放回工作区
+场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。
+场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git  reset HEAD 文件名，就回到了场景1，第二步按场景1操作。
+场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。
+16.rm 文件名：删除文件
+现在你有两个选择，一是确实要从版本库中删除该文件，那就用命令git rm删掉，并且git commit；
+另一种情况是删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：
+$ git checkout -- xxx.txt
+git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。
+17.
+把一个已有的本地仓库与之关联，然后，把本地仓库的内容推送到GitHub仓库
+$ git remote add origin git@github.com:github账户名/本地仓库名
+就可以把本地库的所有内容推送到远程库上：$ git push -u origin master
+从现在起，只要本地作了提交，就可以通过命令：$ git push origin master
+17.命令git clone克隆一个本地库
+$ git clone git@github.com:账户名/xxx.git（想克隆的库名）
+18.git checkout命令加上-b参数表示创建并切换
+$ git checkout -b 分支名
+19.git branch命令：查看所有分支（带*的分支为当前分支）
+20.git branch 分支名：创建分支
+21.git checkout 分支名：切换分支
+22.git merge 分支名：命令用于合并指定分支到当前分支
+23.git branch -d 分支名：删除分支
+24.git log --graph命令可以看到分支合并图
+25.准备合并dev分支，请注意--no-ff参数，表示禁用Fast forward：
+$ git merge --no-ff 【-m "merge with no-ff" 】分支名    //【】内的看情况而定
+26.git stash:可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作
+27.git stash list命令：查看被“储藏”起来的工作现场（即stash内容）
+工作现场还在，Git把stash内容存在某个地方了，但是需要恢复一下，有两个办法：
+一是用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除；
+另一种方式是用git stash pop，恢复的同时把stash内容也删了。
+28.git stash apply @stash{0}      //恢复指定的stash
+29.git branch -D 分支名：强行删除一个没有合并过的分支
+30.git remote -v：查看远程库信息
+31.git push origin 分支名：Git就会把该分支推送到远程库对应的远程分支上
+32.git checkout -b 分支名 origin/分支名：要在dev分支上开发，就必须创建远程origin的dev分支到本地，然后就可以在dev分支上进行修改，记得push上去
+33.多人合作的工作模式：
+①　首先，可以试图用git push origin <branch-name>推送自己的修改；
+②　如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
+③　如果合并有冲突，则解决冲突，并在本地提交；
+④　没有冲突或者解决掉冲突后，再用git push origin <branch-name>推送就能成功！
+如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream-to <branch-name> origin/<branch-name>
+34.git rebase ：把分叉的提交历史“整理”成一条直线    //（缺点是本地的分叉提交已经被修改过了）
+35.git tag 标签名 :添加标签 （默认为HEAD）
+36.git tag :查看所有的标签（标签按字母排序列出）
+37.git tag 标签名 commit_id :为早就提交过的commi打标签（commit_id在历史记录查找）
+38.git show 标签名:查看具体的标签信息
+39.创建带有说明的标签，用-a指定标签名，-m指定说明文字：
+ git tag -a 标签名 -m "..." commit_id
+ 注意：标签总是和某个commit挂钩。如果这个commit既出现在master分支，又出现在dev分支，那么在这两个分支上都可以看到这个标签。
+40.git tag -d 标签名：删除标签
+41.git push origin 标签名：推送某个标签到远程
+42.git push origin --tags：一次性推送全部尚未推送到远程的本地标签
+43.如果标签已经推送到远程，要删除远程标签就得先从本地删除：git tag -d 标签名
+然后，从远程删除。删除命令也是push，但是格式如下：
+$ git push origin :refs/tags/标签名
+44.git config --global color.ui true :让Git显示颜色，会让命令输出看起来更醒目
+45.git config --global alias st status ：表示以后st就表示status
+--global参数是全局参数
+
+
+
+
+ 
+
+
+
